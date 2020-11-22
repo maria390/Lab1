@@ -363,7 +363,7 @@ footer .menu-item{
 .myAnimate{
     animation: myAnimate 4s;
 }
-@keyframes myAnimate{
+    @keyframes myAnimate{
     0%,
     30%,
     60% {
