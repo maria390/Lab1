@@ -27,6 +27,7 @@ a, a i:before{
     color: #ffffff;
     text-decoration: none;
     transition: color 400ms;
+    outline: none !important;
 }
 a:hover, a:hover i:before{
     color: #D4C17F;
@@ -95,6 +96,10 @@ header{
 .mouse{
     margin-top: 90px;
     font-size: 40px;
+    transition: transform 400ms;
+}
+.mouse:hover{
+    transform: scale(1.2);
 }
 .contact i{
     font-size: 21px;
@@ -220,6 +225,25 @@ form input, form button{
     border: none;
     height: 50px;
     width: 100%;
+    animation: input 4s;
+}
+    @keyframes input{
+        0%,
+        20%,
+        40% {
+            transform: scale(0.5);
+            opacity: 0.3;
+        }
+        30%,
+        60%,
+        85% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+            transform: scale(1) rotate(540deg);
+        }
 }
 form input, form input::placeholder{
     text-align: center;
@@ -231,6 +255,10 @@ form button{
     color: #ffffff;
     font-weight: bold;
     font-size: 16px;
+    transition: transform 400ms;
+}
+form button:hover{
+    transform: scale(1.1);
 }
 #form{
     background: linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)), url(../img/build.jpg)#C4C4C4;
@@ -331,4 +359,25 @@ footer .menu-item{
     padding-top: 57px;
     padding-bottom: 45px;
     background: #2D343C;
+}
+.myAnimate{
+    animation: myAnimate 4s;
+}
+@keyframes myAnimate{
+    0%,
+    30%,
+    60% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    10%,
+    40%,
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) rotate(-360deg);
+    }
 }
