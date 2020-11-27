@@ -12,5 +12,41 @@ var wow = new WOW(
       scrollContainer: null,    // optional scroll container selector, otherwise use window,
       resetAnimation: true,     // reset animation on end (default is true)
     }
-  );
-  wow.init();
+);
+wow.init();
+
+let d=document.getElementById("d");
+let h=document.getElementById("h");
+let m=document.getElementById("m");
+let s=document.getElementById("s");
+
+
+setInterval(tic,1000);
+
+
+function tic(){
+  let d1=new Date();
+  let d2=new Date(d1.getFullYear(), 11, 31, 24);
+  let ms=d2.getTime()-d1.getTime();
+  let sec=ms/1000;
+  let min=sec/60;
+  let hours=min/60;
+  let days=hours/24;
+
+  hours=23-d1.getHours();
+  if (hours<10){
+    hours="0"+hours;
+  }
+  min=59-d1.getMinutes();
+  if (min<10){
+    min="0"+min;
+  }
+  sec=59-d1.getSeconds();
+  if (sec<10){
+    sec="0"+sec;
+  }
+  d.innerHTML=Math.floor(days)+":";
+  h.innerHTML=hours+":";
+  m.innerHTML=min+":";
+  s.innerHTML=sec;
+}
