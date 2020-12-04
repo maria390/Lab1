@@ -13,7 +13,9 @@ var wow = new WOW(
       resetAnimation: true,     // reset animation on end (default is true)
     }
 );
-wow.init();
+
+if (window.innerWidth>991.97)
+  wow.init();
 
 let d=document.getElementById("d");
 let h=document.getElementById("h");
@@ -45,8 +47,20 @@ function tic(){
   if (sec<10){
     sec="0"+sec;
   }
-  d.innerHTML=Math.floor(days)+":";
-  h.innerHTML=hours+":";
-  m.innerHTML=min+":";
-  s.innerHTML=sec;
+  d.innerHTML=Math.floor(days)+"дн. ";
+  h.innerHTML=hours+"ч. ";
+  m.innerHTML=min+"мин. ";
+  s.innerHTML=sec+"сек. ";
 }
+function toggleMenu(event){
+  console.log(event.target.tagName);
+  document.body.classList.toggle("activemenu");
+}
+function toggleMenu2(event){
+  console.log(event.target.tagName);
+  if (event.target.tagName=="A")
+    document.body.classList.toggle("activemenu");
+}
+document.getElementsByClassName("menu-block")[0].addEventListener("click", toggleMenu2);
+document.getElementsByClassName("btnmenu")[0].addEventListener("click", toggleMenu);
+document.getElementsByClassName("closeblock")[0].addEventListener("click", toggleMenu);
